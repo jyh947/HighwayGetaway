@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc73dd5819134764a79113bf04eff84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 0
 --- !u!1 &705311472
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +327,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 719979598}
+  - 114: {fileID: 719979599}
   m_Layer: 0
   m_Name: Lane Manager
   m_TagString: Untagged
@@ -345,6 +347,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 35653230}
   m_RootOrder: 0
+--- !u!114 &719979599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 719979597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdf019b8294b4d38829c2c84ecf5aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSpawnFrequency: 0
+  lanes: []
+  cars: []
 --- !u!1 &758512964
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9771d5db17e304571b9e22deee03808a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cars: []
 --- !u!4 &1610182184
 Transform:
   m_ObjectHideFlags: 0

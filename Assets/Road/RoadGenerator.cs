@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class RoadGenerator : MonoBehaviour {
 	
 	public Transform prefab;
+
 	public int numRows;
 	public int rowWidth;
 	public float recycleOffset;
@@ -28,7 +29,7 @@ public class RoadGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (tileQueue.Peek().localPosition.z + recycleOffset < Car.distanceTravelled) {
+		if (tileQueue.Peek().localPosition.z + recycleOffset < Car.getDistanceTravelled()) {
 			recycle();
 		}
 	}

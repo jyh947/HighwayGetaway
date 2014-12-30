@@ -5,8 +5,7 @@ public static class GameEventManager {
 	
 	public delegate void GameEvent();
 	
-	public static event GameEvent TitleScreen, Game, GameOver;
-
+	public static event GameEvent Game, GameOver;
 
 	public static void TriggerGame(){
 		if(Game != null){

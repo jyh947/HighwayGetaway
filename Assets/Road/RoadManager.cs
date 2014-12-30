@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class RoadGenerator : MonoBehaviour {
+public class RoadManager : MonoBehaviour {
 	
-	public Transform prefab;
+	public Transform roadPrefab;
+	public Transform dividerPrefab;
 
 	public int numRows;
 	public int rowWidth;
@@ -20,7 +21,7 @@ public class RoadGenerator : MonoBehaviour {
 		
 		tileQueue = new Queue<Transform> (numRows * rowWidth);
 		for (int i = 0; i < numRows * rowWidth; ++i) {
-			tileQueue.Enqueue ((Transform)Instantiate (prefab));
+			tileQueue.Enqueue ((Transform)Instantiate (roadPrefab));
 		}
 		for (int i = 0; i < numRows; ++i) {
 			recycle();

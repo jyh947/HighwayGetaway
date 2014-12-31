@@ -7,13 +7,11 @@ public class RoadManager : MonoBehaviour {
 	public Transform rightBorderPrefab;
 	public Transform dividerPrefab;
 	public Transform roadTilePrefab;
-
-	public float pubTileWidth = 1.75f;
-
+	
 	public int minLanes = 2;
 	public int maxLanes = 4;
 	public int numLanes = 2;
-	public int roadLength = 60;
+	public int roadLength = 10;
 	public int recycleOffset = 5;
 
 	public int maxRoadTileObjects = 60;
@@ -30,6 +28,7 @@ public class RoadManager : MonoBehaviour {
 	private float borderWidth;
 	private float dividerWidth;
 	private float roadTileWidth;
+	private float tileOffset;
 
 	// Use this for initialization
 	void Start () {
@@ -41,7 +40,6 @@ public class RoadManager : MonoBehaviour {
 
 		// Generate road assets
 		for (int i = 0; i < maxRoadTileObjects; ++i) {
-			Debug.LogWarning("made obj");
 			leftBorderQueue.Enqueue((Transform)Instantiate(leftBorderPrefab));
 			rightBorderQueue.Enqueue((Transform)Instantiate(rightBorderPrefab));
 			dividerQueue.Enqueue((Transform)Instantiate(dividerPrefab));
@@ -61,6 +59,8 @@ public class RoadManager : MonoBehaviour {
 		roadTileWidth = r.bounds.size.x;
 
 		tileHeight = r.bounds.size.z;
+		tileOffset = (roadTileWidth + dividerWidth)/2;
+
 		/*
 		Debug.Log ("borderWidth: " + borderWidth);
 		Debug.Log ("dividerWidth: " + dividerWidth);
@@ -69,7 +69,7 @@ public class RoadManager : MonoBehaviour {
 		*/
 
 		// set tiles to locations
-		for (int i = 0; i < maxRoadTileObjects; ++i) {
+		for (int i = 0; i < roadLength; ++i) {
 			constructRoad();
 		}
 	}
@@ -82,7 +82,8 @@ public class RoadManager : MonoBehaviour {
 		Debug.Log (rightBorderQueue.Count);
 		Debug.Log (dividerQueue.Count);
 		*/
-		if (leftBorderQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTravelled ()) {
+
+		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTravelled ()) {
 			constructRoad ();
 		}
 	}
@@ -91,28 +92,25 @@ public class RoadManager : MonoBehaviour {
 		Transform border = leftBorderQueue.Dequeue ();
 		border.localPosition = nextPosition;
 		leftBorderQueue.Enqueue (border);
-		nextPosition.x += pubTileWidth;
+		nextPosition.x += tileOffset;
 
 		Transform roadTile, divider;
-		Debug.Log ("numlanes: " + numLanes);
 		for (int i = 0; i < numLanes - 1; ++i) {
-			Debug.Log("made lane");
 			roadTile = roadTileQueue.Dequeue();
 			roadTile.localPosition = nextPosition;
 			roadTileQueue.Enqueue(roadTile);
-			nextPosition.x += pubTileWidth;
+			nextPosition.x += tileOffset;
 
 			divider = dividerQueue.Dequeue();
 			divider.localPosition = nextPosition;
 			dividerQueue.Enqueue(divider);
-			nextPosition.x += pubTileWidth;
+			nextPosition.x += tileOffset;
 		}
-		Debug.Log ("over");
 
 		roadTile = roadTileQueue.Dequeue();
 		roadTile.localPosition = nextPosition;
 		roadTileQueue.Enqueue(roadTile);
-		nextPosition.x += pubTileWidth;
+		nextPosition.x += tileOffset;
 
 		border = rightBorderQueue.Dequeue ();
 		border.localPosition = nextPosition;
@@ -120,5 +118,9 @@ public class RoadManager : MonoBehaviour {
 
 		nextPosition.x = startPosition.x;
 		nextPosition.z += tileHeight;
+	}
+	
+	public int getNumLanes() {
+		return numLanes;
 	}
 }

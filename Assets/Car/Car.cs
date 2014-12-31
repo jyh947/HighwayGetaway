@@ -27,4 +27,9 @@ public class Car : MonoBehaviour {
 	{
 		return distanceTravelled;
 	}
+
+	public Transform getTransform()
+	{
+		return transform;
+	}
 }

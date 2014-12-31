@@ -28,7 +28,7 @@ public class Lane : MonoBehaviour {
 
 	private void checkIfCarsOffscreen() {
 		foreach( NonPlayerCar thisCar in cars ) {
-			if( thisCar.transform.position.z > laneManager.LANE_LENGTH ) {
+			if( thisCar.transform.localPosition.z > laneManager.LANE_LENGTH ) {
 				laneManager.removeCar( thisCar, this );
 			}
 		}

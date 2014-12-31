@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class NonPlayerCar : MonoBehaviour {
-
-	public float position;
+	
+	public float speed;
+	private float relativeSpeed = speed - ;
 
 	public void stopCar(){
 		// 
@@ -20,6 +21,11 @@ public class NonPlayerCar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		position = gameObject.GetComponent<Transform>().localPosition.z;
+		drive();
 	}
+
+	private void drive() {
+
+	}
+
 }

@@ -260,7 +260,7 @@ Transform:
   m_PrefabInternal: {fileID: 583062674}
   m_GameObject: {fileID: 337286099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3499999, y: .5, z: 0}
+  m_LocalPosition: {x: 2.375, y: .5, z: 0}
   m_LocalScale: {x: 1.45000005, y: 1, z: 2.70000005}
   m_Children: []
   m_Father: {fileID: 975656711}
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e01492ff2118a48bcfd93ac609ea99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneSwitchOffset: 3.375
 --- !u!1001 &583062674
 Prefab:
   m_ObjectHideFlags: 0
@@ -285,7 +286,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.3499999
+      value: 2.375
       objectReference: {fileID: 0}
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -603,14 +604,13 @@ MonoBehaviour:
   rightBorderPrefab: {fileID: 466204, guid: 51383fec803ce0a4591eeec0ec4f9082, type: 2}
   dividerPrefab: {fileID: 493126, guid: c026984c8944ce742ba41143d8cd05d9, type: 2}
   roadTilePrefab: {fileID: 490576, guid: 3be2e65e5739e3f459eb0794c9a41e18, type: 2}
-  pubTileWidth: 1.75
   minLanes: 2
   maxLanes: 4
   numLanes: 3
   roadLength: 10
-  recycleOffset: 5
+  recycleOffset: 3
   maxRoadTileObjects: 60
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: .5, y: 0, z: -6}
 --- !u!1 &1263344503
 GameObject:
   m_ObjectHideFlags: 0

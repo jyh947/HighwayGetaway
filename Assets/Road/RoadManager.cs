@@ -69,6 +69,7 @@ public class RoadManager : MonoBehaviour {
 		*/
 
 		// set tiles to locations
+		nextPosition = startPosition;
 		for (int i = 0; i < roadLength; ++i) {
 			constructRoad();
 		}

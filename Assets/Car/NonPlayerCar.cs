@@ -4,7 +4,7 @@ using System.Collections;
 public class NonPlayerCar : MonoBehaviour {
 	
 	public float speed;
-	private float relativeSpeed = speed - ;
+	//private float relativeSpeed = speed - ;
 
 	public void stopCar(){
 		// 

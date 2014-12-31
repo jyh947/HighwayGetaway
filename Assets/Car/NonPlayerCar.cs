@@ -10,9 +10,8 @@ public class NonPlayerCar : MonoBehaviour {
 		gameObject.SetActive( false );
 	}
 
-	public void startCar( Lane targetLane ){
+	public void startCar( ){
 		gameObject.SetActive( true );
-		targetLane.addCarToLane( this );
 	}
 
 	// Use this for initialization

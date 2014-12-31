@@ -8,32 +8,29 @@ public class Lane : MonoBehaviour {
 	public static LaneManager laneManager;
 	public List<NonPlayerCar> cars = new List<NonPlayerCar>();  // public for debugging
 
-	public void addCarToLane( NonPlayerCar newCar ) {
-		if ( !cars.Contains (newCar) ) {
-			cars.Add( newCar );
-		}
-		else {
-			// Car is already in lane. idk what.
-			Debug.LogError("Car already in lane.");
-		}
+	private Vector3 startOfLane;
+
+	public NonPlayerCar makeNewCarInLane( GameObject newCarType ) {
+		NonPlayerCar newCar = (NonPlayerCar) Instantiate( newCarType, transform.position, Quaternion.identity );
+		cars.Add( newCar );
+		return newCar;
+
 	}
 
 	// Use this for initialization
 	void Start () {
-		cars = new List<NonPlayerCar>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		checkIfCarsOffscreen();
 	}
 
 	private void checkIfCarsOffscreen() {
 		foreach( NonPlayerCar thisCar in cars ) {
-			//if( thisCar.position > laneManager.MAXIMUM_CAR_DISTANCE ) {
-				thisCar.stopCar();
-				cars.Remove( thisCar );
-			//}
+			if( thisCar.transform.position.z > laneManager.LANE_LENGTH ) {
+				laneManager.removeCar( thisCar, this );
+			}
 		}
 	}
 

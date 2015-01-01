@@ -8,13 +8,13 @@ public class RoadManager : MonoBehaviour {
 	public Transform dividerPrefab;
 	public Transform roadTilePrefab;
 	
-	public static int minLanes = 2;
-	public static int maxLanes = 4;
+	public static int minLanes = 5;
+	public static int maxLanes = 5;
 
 	public int maxRoadLength = 10;
 	public int recycleOffset = 5;
 
-	public int maxRoadTileObjects = 60;
+	public int maxRoadTileObjects = 100;
 
 	public float minChangeTime = 3f;
 	public float maxChangeTime = 6f;
@@ -34,7 +34,7 @@ public class RoadManager : MonoBehaviour {
 	private float roadTileWidth;
 	private float tileOffset; // horizontal distance between two road/divider tiles
 
-	public static int numLanes;
+	public static int numLanes = 5;
 	
 	private float timeUntilRoadChange = 3f;
 
@@ -77,8 +77,6 @@ public class RoadManager : MonoBehaviour {
 		*/
 
 		// Generate random numbers
-		numLanes = (int)Random.Range (minLanes, maxLanes + 1);
-		Debug.Log ("number of lanes: " + numLanes);
 
 		// set tiles to locations
 		nextPosition = originalStartPosition;
@@ -104,11 +102,6 @@ public class RoadManager : MonoBehaviour {
 			timeUntilRoadChange = Random.Range (minChangeTime, maxChangeTime);
 
 			// Generate new numer of lanes
-			int newNumLanes;
-			do {
-				newNumLanes = (int)Random.Range(minLanes, maxLanes + 1);
-			} while (numLanes == newNumLanes);
-			numLanes = newNumLanes;
 
 			// Generate starting position of the lanes
 			int startLane = (int)Random.Range(0, 4 - numLanes + 1);

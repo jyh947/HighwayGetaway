@@ -19,7 +19,8 @@ public class RoadManager : MonoBehaviour {
 	public float minChangeTime = 3f;
 	public float maxChangeTime = 6f;
 	
-	public Vector3 startPosition;
+	public Vector3 originalStartPosition;
+	private Vector3 startPosition;
 	private Vector3 nextPosition;
 	
 	private Queue<Transform> leftBorderQueue;
@@ -31,7 +32,7 @@ public class RoadManager : MonoBehaviour {
 	private float borderWidth;
 	private float dividerWidth;
 	private float roadTileWidth;
-	private float tileOffset;
+	private float tileOffset; // horizontal distance between two road/divider tiles
 
 	public static int numLanes;
 	
@@ -80,7 +81,8 @@ public class RoadManager : MonoBehaviour {
 		Debug.Log ("number of lanes: " + numLanes);
 
 		// set tiles to locations
-		nextPosition = startPosition;
+		nextPosition = originalStartPosition;
+		startPosition = originalStartPosition;
 		for (int i = 0; i < maxRoadLength; ++i) {
 			constructRoad();
 		}
@@ -95,12 +97,23 @@ public class RoadManager : MonoBehaviour {
 		Debug.Log (dividerQueue.Count);
 		*/
 
+		// After time limit, change road
 		timeUntilRoadChange -= Time.deltaTime;
 		if (timeUntilRoadChange <= 0) {
+			// Generate new time to wait until road change
 			timeUntilRoadChange = Random.Range (minChangeTime, maxChangeTime);
+
+			// Generate new numer of lanes
 			numLanes = (int)Random.Range(minLanes, maxLanes + 1);
+
+			// Generate starting position of the lanes
+			int startLane = (int)Random.Range(0, 4 - numLanes + 1);
+			Debug.Log("startLane: " + startLane);
+			startPosition.x = originalStartPosition.x + startLane * tileOffset * 2;
+			nextPosition.x = startPosition.x;
 		}
 
+		// If the car is past a certain point, construct the road up front
 		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTravelled ()) {
 			constructRoad ();
 		}

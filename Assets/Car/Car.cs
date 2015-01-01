@@ -3,14 +3,19 @@ using System.Collections;
 
 public class Car : MonoBehaviour {
 
+	public float startX = 2.375f;
+	public float startY = 0.5f;
 	public float laneSwitchOffset = 3.375f;
-	
-	private static float speed;
+	public float speed = 5f;
+
 	private static float distanceTravelled;
 
 	// Use this for initialization
 	void Start () {
-		speed = 5f;
+		// Generate random numbers about where to start
+		// int startingLane = (int)Random.Range (0, RoadManager.numLanes);
+		int startingLane = 1;
+		transform.position = new Vector3 (startX + startingLane * laneSwitchOffset, startY, 0f);
 		distanceTravelled = 0f;
 	}
 	
@@ -27,7 +32,7 @@ public class Car : MonoBehaviour {
 		}
 	}
 
-	public static float getSpeed()
+	public float getSpeed()
 	{
 		return speed;
 	}

@@ -104,7 +104,11 @@ public class RoadManager : MonoBehaviour {
 			timeUntilRoadChange = Random.Range (minChangeTime, maxChangeTime);
 
 			// Generate new numer of lanes
-			numLanes = (int)Random.Range(minLanes, maxLanes + 1);
+			int newNumLanes;
+			do {
+				newNumLanes = (int)Random.Range(minLanes, maxLanes + 1);
+			} while (numLanes == newNumLanes);
+			numLanes = newNumLanes;
 
 			// Generate starting position of the lanes
 			int startLane = (int)Random.Range(0, 4 - numLanes + 1);

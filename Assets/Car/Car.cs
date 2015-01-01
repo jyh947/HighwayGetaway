@@ -6,10 +6,11 @@ public class Car : MonoBehaviour {
 	public float startX = 2.375f;
 	public float startY = 0.5f;
 	public float laneSwitchOffset = 3.375f;
-	public float speed = 5f;
 	public float minSwipeDistX;
 	public float minSwipeDistY;
+	public int lowSpeed = 0;
 	public Vector2 startPos;
+	public static float speed = 8f;
 	private static float distanceTravelled;
 
 	// Use this for initialization
@@ -25,12 +26,27 @@ public class Car : MonoBehaviour {
 	void Update () {
 		transform.Translate(0f, 0f, speed * Time.deltaTime);
 		distanceTravelled = transform.localPosition.z;
-
+		if (speed < 7f) {
+			lowSpeed++;
+		} else {
+			lowSpeed = 0;
+		}
+		if (lowSpeed > 500) {
+			Application.LoadLevel("GameOver");
+		}
 		// Input handling
 		if (Input.GetKeyDown ("left")) {
 			transform.Translate (-laneSwitchOffset, 0f, 0f);
 		} else if (Input.GetKeyDown ("right")) {
 			transform.Translate (laneSwitchOffset, 0f, 0f);
+		} else if (Input.GetKeyDown ("up")) {
+			if(speed < 14f){
+				speed += 2f;
+			}
+		} else if (Input.GetKeyDown ("down")) {
+			if(speed > 6f){
+				speed -= 2f;
+			}
 		}
 
 		if (Input.touchCount > 0) 
@@ -48,14 +64,18 @@ public class Car : MonoBehaviour {
 				if (swipeDistVertical > minSwipeDistY) 	
 				{
 					float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
-					if (swipeValue > 0){//up swipe
-						//Jump ();
+					if (swipeValue > 0){
+						if(speed < 14f){
+							speed += 2f;
+						}
 					}
-					else if (swipeValue < 0){//down swipe
-						//Shrink ();
+					else if (swipeValue < 0){
+						if(speed > 4f){
+							speed -= 2f;
+						}
 					}
 				}
-				
+
 				float swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
 				if (swipeDistHorizontal > minSwipeDistX)	
 				{
@@ -71,8 +91,13 @@ public class Car : MonoBehaviour {
 			}
 		}
 	}
+	
+	public int getLowSpeed()
+	{
+		return lowSpeed;
+	}
 
-	public float getSpeed()
+	public static float getSpeed()
 	{
 		return speed;
 	}

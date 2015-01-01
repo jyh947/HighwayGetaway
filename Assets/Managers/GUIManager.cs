@@ -3,19 +3,17 @@
 public class GUIManager : MonoBehaviour {
 
 	private static GUIManager instance;
-	
+	public GUIText velocityText, distanceText;
+
 	void Start () {
 		instance = this;
-		GameEventManager.GameOver += GameOver;
 	}
 	
-	void Update () {
-		if(Input.GetButtonDown("Fire1")){
-			GameEventManager.TriggerGameOver();
-		}
+	public static void SetVelocity(){
+		instance.velocityText.text = Car.getSpeed().ToString();
 	}
 	
-	private void GameOver () {
-		enabled = true;
+	public static void SetDistance(){
+		instance.distanceText.text = Car.getDistanceTravelled().ToString();
 	}
 }

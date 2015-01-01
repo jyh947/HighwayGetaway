@@ -15,9 +15,9 @@ public class GrassManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		nextPosition = startPosition;
-
-		frontTransform = (Transform)Instantiate (prefab);
-		backTransform = (Transform)Instantiate (prefab);
+		Vector3 rotation = new Vector3 (90f, 0f, 0f);
+		frontTransform = (Transform)Instantiate (prefab, startPosition, Quaternion.Euler(rotation));
+		backTransform = (Transform)Instantiate (prefab, startPosition, Quaternion.Euler(rotation));
 		moveTile ();
 	}
 	

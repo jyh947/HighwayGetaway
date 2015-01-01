@@ -2,14 +2,14 @@
 
 public class GUIManager : MonoBehaviour {
 	
-	public GUIText velocityText, scoreText, policeDistanceText, tryAgainText;
-	public GUITexture Title;
+	public GUIText velocityText, scoreText, policeDistanceText;
+	public GUITexture Title, tryAgainText;
 	
 	private static GUIManager instance;
 	
 	void Start () {
 		instance = this;
-		GameEventManager.Game += Game;
+		GameEventManager.GameStart += GameStart;
 		GameEventManager.GameOver += GameOver;
 		Title.enabled = true;
 		velocityText.enabled = false;
@@ -20,14 +20,14 @@ public class GUIManager : MonoBehaviour {
 	
 	void Update () {
 		if(Input.GetButtonDown("Jump")){
-			GameEventManager.TriggerGame();
+			GameEventManager.TriggerGameStart();
 		}
 		if(Input.GetButtonDown("Fire1")){
 			GameEventManager.TriggerGameOver();
 		}
 	}
 
-	private void Game() {
+	private void GameStart() {
 		Title.enabled = false;
 		velocityText.enabled = true;
 		scoreText.enabled = true;

@@ -1,15 +1,12 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public static class GameEventManager {
+﻿public static class GameEventManager {
 	
 	public delegate void GameEvent();
 	
-	public static event GameEvent Game, GameOver;
-
-	public static void TriggerGame(){
-		if(Game != null){
-			Game();
+	public static event GameEvent GameStart, GameOver;
+	
+	public static void TriggerGameStart(){
+		if(GameStart != null){
+			GameStart();
 		}
 	}
 	

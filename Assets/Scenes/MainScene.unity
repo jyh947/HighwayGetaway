@@ -320,6 +320,9 @@ MonoBehaviour:
   startY: .5
   laneSwitchOffset: 3.375
   speed: 7.19999981
+  minSwipeDistX: 100
+  minSwipeDistY: 100
+  startPos: {x: 0, y: 0}
 --- !u!1001 &583062674
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+![Highway Getaway Logo](http://i.imgur.com/9uBCvVu.png "Logo")
 Highway Getaway
 ==============
 ### Police chases for your fingers.

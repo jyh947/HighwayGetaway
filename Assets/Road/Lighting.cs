@@ -65,7 +65,7 @@ public class Lighting : MonoBehaviour {
 		// Create Street Lamps
 
 		if (streetLampQueue.Peek ().localPosition.z + recycleOffset * streetLampDistance 
-		    	< Car.getDistanceTravelled ()) {
+		    	< Car.getDistanceTraveled ()) {
 			constructLamps ();
 		}
 	}

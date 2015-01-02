@@ -15,7 +15,7 @@ public class CopyCat : MonoBehaviour {
 		speed = Globals.StartingVelocity;
 		int startingLane = 1;
 		transform.position = new Vector3 (startX + startingLane * laneSwitchOffset, startY, 0f);
-		distanceTraveled = 0;
+		distanceTraveled = 0f;
 	}
 
 	void Update () {

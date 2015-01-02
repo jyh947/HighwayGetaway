@@ -111,7 +111,7 @@ public class RoadManager : MonoBehaviour {
 		}
 
 		// If the car is past a certain point, construct the road up front
-		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTravelled ()) {
+		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTraveled ()) {
 			constructRoad ();
 		}
 	}

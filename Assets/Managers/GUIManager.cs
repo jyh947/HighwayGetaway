@@ -17,7 +17,7 @@ public class GUIManager : MonoBehaviour {
 	}
 	
 	public static void SetDistance(){
-		int score = ((int)Car.getDistanceTravelled ()) / 7;
+		int score = ((int)Car.getDistanceTraveled ()) / 7;
 		instance.distanceText.text = score.ToString();
 	}
 

@@ -23,7 +23,7 @@ public class GrassManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Car.getDistanceTravelled() > frontTransform.localPosition.z - recycleOffset) {
+		if (Car.getDistanceTraveled() > frontTransform.localPosition.z - recycleOffset) {
 			moveTile ();
 		}
 	}

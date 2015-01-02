@@ -17,9 +17,9 @@ public class Car : MonoBehaviour {
 		// Generate random numbers about where to start
 		// int startingLane = (int)Random.Range (0, RoadManager.numLanes);
 		speed = Globals.StartingVelocity;
-		int startingLane = 1;
+		int startingLane = 2;
 		transform.position = new Vector3 (startX + startingLane * laneSwitchOffset, startY, 0f);
-		distanceTraveled = 0;
+		distanceTraveled = 0f;
 	}
 	
 	// Update is called once per frame
@@ -61,7 +61,7 @@ public class Car : MonoBehaviour {
 		speed = newSpeed;
 	}
 
-	public static float getDistanceTravelled()
+	public static float getDistanceTraveled()
 	{
 		return distanceTraveled;
 	}

@@ -28,11 +28,11 @@ public class RoadManager : MonoBehaviour {
 	private Queue<Transform> dividerQueue;
 	private Queue<Transform> roadTileQueue;
 
-	private float tileHeight;
-	private float borderWidth;
-	private float dividerWidth;
-	private float roadTileWidth;
-	private float tileOffset; // horizontal distance between two road/divider tiles
+	private static float tileHeight;
+	private static float borderWidth;
+	private static float dividerWidth;
+	private static float roadTileWidth;
+	private static float tileOffset; // horizontal distance between two road/divider tiles
 
 	public static int numLanes = 5;
 	
@@ -154,5 +154,9 @@ public class RoadManager : MonoBehaviour {
 
 	public static int getMaxLanes() {
 		return maxLanes; 
+	}
+
+	public static float getRoadWidth() {
+		return numLanes * roadTileWidth + (numLanes - 1) * dividerWidth + 2 * borderWidth;
 	}
 }

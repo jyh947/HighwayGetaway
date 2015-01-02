@@ -13,7 +13,7 @@ public class CopyCat : MonoBehaviour {
 
 	void Start () {
 		speed = Globals.StartingVelocity;
-		int startingLane = 1;
+		int startingLane = 2;
 		transform.position = new Vector3 (startX + startingLane * laneSwitchOffset, startY, 0f);
 		distanceTraveled = 0f;
 	}
@@ -77,7 +77,6 @@ public class CopyCat : MonoBehaviour {
 				break;
 			}
 		}
-		
 		Car.setSpeed (speed);
 	}
 

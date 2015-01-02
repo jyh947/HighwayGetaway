@@ -25,6 +25,7 @@ public class Car : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		distanceTraveled = transform.position.z;
+		transform.Translate(0f, 0f, speed * Time.deltaTime);
 		transform.position = Vector3.Lerp (transform.position, target.position, fract);
 		if (speed < Globals.LosingVelocity) {
 			lowSpeed++;
@@ -33,15 +34,6 @@ public class Car : MonoBehaviour {
 		}
 		if (lowSpeed > 500) {
 			Application.LoadLevel("GameOver");
-		}
-		if (Input.GetKeyDown ("up")) {
-			if(speed < Globals.MaxVelocity){
-				speed += Globals.SwipeVelocityChange;
-			}
-		} else if (Input.GetKeyDown ("down")) {
-			if(speed > Globals.MinVelocity){
-				speed -= Globals.SwipeVelocityChange;
-			}
 		}
 
 	}

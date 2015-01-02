@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraX: 10
-  cameraY: 70
+  cameraY: 15
 --- !u!1 &975656710
 GameObject:
   m_ObjectHideFlags: 0

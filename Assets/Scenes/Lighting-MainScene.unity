@@ -320,11 +320,11 @@ MonoBehaviour:
   sunNight: {r: .742647052, g: .27303201, b: .27303201, a: 0}
   sunDay: {r: 1, g: 1, b: 1, a: 0}
   sun: {fileID: 403878927}
-  numLamps: 10
-  recycleOffset: 7
+  numLamps: 8
+  recycleOffset: 1
   startPosition: {x: 4, y: 3.5, z: 0}
   streetLampPrefab: {fileID: 422636, guid: 0ee042cfb9b08ca4c999be2f1c06a15c, type: 2}
-  streetLampDistance: 10
+  streetLampDistance: 13
 --- !u!1 &578309799
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ Light:
   m_Color: {r: 1, g: .990872204, b: .669117689, a: 1}
   m_Intensity: .600000024
   m_Range: 36.9199982
-  m_SpotAngle: 84
+  m_SpotAngle: 94
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityText: {fileID: 0}
   distanceText: {fileID: 0}
+  counter: 0
 --- !u!4 &748927186
 Transform:
   m_ObjectHideFlags: 0
@@ -653,7 +654,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 422636, guid: 0ee042cfb9b08ca4c999be2f1c06a15c, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ee042cfb9b08ca4c999be2f1c06a15c, type: 2}

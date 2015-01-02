@@ -203,7 +203,10 @@ MonoBehaviour:
   startX: 5.75
   startY: .5
   laneSwitchOffset: 3.375
-  speed: 7.19999981
+  minSwipeDistX: 0
+  minSwipeDistY: 0
+  lowSpeed: 0
+  startPos: {x: 0, y: 0}
 --- !u!1 &403878926
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +286,7 @@ MonoBehaviour:
   slider: 0
   hour: 0
   timeOfDay: 0
-  speed: -50
+  speed: 50
   sunNight: {r: .643137276, g: 0, b: 0, a: 0}
   sunDay: {r: 1, g: 1, b: 1, a: 0}
   sun: {fileID: 403878927}
@@ -418,6 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba1bd7af0002740b31e91e12fb657d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocityText: {fileID: 0}
+  distanceText: {fileID: 0}
 --- !u!4 &748927186
 Transform:
   m_ObjectHideFlags: 0
@@ -740,8 +745,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 1
-  m_Color: {r: .905882359, g: .937254906, b: .972549021, a: 1}
-  m_Intensity: .400000006
+  m_Color: {r: .701773345, g: .836545706, b: .867647052, a: 1}
+  m_Intensity: .150000006
   m_Range: 70
   m_SpotAngle: 63
   m_CookieSize: 10

@@ -319,8 +319,8 @@ MonoBehaviour:
   startX: 2.375
   startY: .5
   laneSwitchOffset: 3.375
-  minSwipeDistX: 100
-  minSwipeDistY: 100
+  minSwipeDistX: 50
+  minSwipeDistY: 50
   lowSpeed: 0
   startPos: {x: 0, y: 0}
 --- !u!1001 &583062674
@@ -412,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityText: {fileID: 1578093694}
   distanceText: {fileID: 1339409982}
+  counter: 0
 --- !u!4 &748927186
 Transform:
   m_ObjectHideFlags: 0

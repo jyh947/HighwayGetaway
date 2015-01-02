@@ -16,14 +16,16 @@ public class Lighting : MonoBehaviour {
 	public Light sun;
 
 	// Street Lamps
-	public int numLamps = 10;
+	public int numLamps = 6;
 	public int recycleOffset = 2;
 	public Vector3 startPosition;
 	public Transform streetLampPrefab;
 	public float streetLampDistance;
+	public float roadWidth = 10f;
 
 	private Queue<Transform> streetLampQueue;
 	private Vector3 nextPosition;
+	private int roadSide = 1;
 
 	// sun stuff
 	void OnGUI() {
@@ -43,12 +45,16 @@ public class Lighting : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		streetLampQueue = new Queue<Transform> (10);
+		streetLampQueue = new Queue<Transform> (numLamps);
 
-		for (int i = 0; i < numLamps; ++i) {
+		Vector3 rotatedAngle = new Vector3 (0f, 180f, 0f);
+		for (int i = 0; i < numLamps / 2; ++i) {
 			streetLampQueue.Enqueue ((Transform)Instantiate (streetLampPrefab));
+			streetLampQueue.Enqueue ((Transform)Instantiate (streetLampPrefab, startPosition,
+			                                                 Quaternion.Euler(rotatedAngle)));
 		}
 
+		nextPosition = startPosition;
 		for (int i = 0; i < numLamps; ++i) {
 			constructLamps();
 		}
@@ -69,13 +75,9 @@ public class Lighting : MonoBehaviour {
 		lamp.localPosition = nextPosition;
 		streetLampQueue.Enqueue (lamp);
 
-		nextPosition.x += RoadManager.getRoadWidth ();
-
-		lamp = streetLampQueue.Dequeue ();
-		lamp.localPosition = nextPosition;
-		streetLampQueue.Enqueue (lamp);
-
-		nextPosition.x = startPosition.x;
+		nextPosition.x += roadSide * roadWidth;
 		nextPosition.z += streetLampDistance;
+
+		roadSide *= -1;
 	}
 }

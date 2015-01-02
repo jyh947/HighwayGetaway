@@ -14,7 +14,7 @@ public class RoadManager : MonoBehaviour {
 	public int maxRoadLength = 10;
 	public int recycleOffset = 5;
 
-	public int maxRoadTileObjects = 100;
+	public int maxRoadTileObjects = 120;
 
 	public float minChangeTime = 3f;
 	public float maxChangeTime = 6f;

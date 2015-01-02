@@ -4,9 +4,12 @@ public class GUIManager : MonoBehaviour {
 
 	private static GUIManager instance;
 	public GUIText velocityText, distanceText;
+	public int counter = 0;
 
 	void Start () {
 		instance = this;
+		velocityText.enabled = true;
+		distanceText.enabled = true;
 	}
 	
 	public static void SetVelocity(){
@@ -14,6 +17,16 @@ public class GUIManager : MonoBehaviour {
 	}
 	
 	public static void SetDistance(){
-		instance.distanceText.text = Car.getDistanceTravelled().ToString();
+		int score = ((int)Car.getDistanceTravelled ()) / 7;
+		instance.distanceText.text = score.ToString();
+	}
+
+	void Update () {
+		counter++;
+		if (counter >= 10) {
+			SetVelocity ();
+			SetDistance ();
+			counter = 0;
+		}
 	}
 }

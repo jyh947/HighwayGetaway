@@ -13,6 +13,6 @@ public class CameraManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3(cameraX, cameraY, Car.getDistanceTravelled() - 5f);
+		transform.position = new Vector3(cameraX, cameraY, CopyCat.getDistanceTraveled() - 7f);
 	}
 }

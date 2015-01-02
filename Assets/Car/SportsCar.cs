@@ -14,14 +14,15 @@ public class SportsCar : MonoBehaviour {
 		int startingLane = (int)Random.Range (0, RoadManager.numLanes - 1);
 		//int startingLane = 1;
 		transform.position = new Vector3 (startX + startingLane * laneSwitchOffset, startY,
-		                                  Car.getDistanceTravelled() + 45f);
+		                                  CopyCat.getDistanceTraveled() + 45f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(0f, 0f, speed * Time.deltaTime);
-		if (transform.position.z < Car.getDistanceTravelled () - 20f) {
+		if (transform.position.z < CopyCat.getDistanceTraveled() - 20f) {
 			//destroy car here
 		}
 	}
 }
+

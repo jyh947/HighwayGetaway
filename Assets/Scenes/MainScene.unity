@@ -421,6 +421,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1076916457}
+  - {fileID: 1841310342}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &511359595
@@ -698,11 +699,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1005,7 +1006,7 @@ Transform:
   m_PrefabInternal: {fileID: 799507993}
   m_GameObject: {fileID: 1076916456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.75, y: .5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.45000005, y: 1, z: 2.70000005}
   m_Children: []
   m_Father: {fileID: 477912352}
@@ -1021,13 +1022,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e01492ff2118a48bcfd93ac609ea99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startX: 5.75
-  startY: .5
+  startX: 0
+  startY: 0
   laneSwitchOffset: 3.375
-  minSwipeDistX: 50
-  minSwipeDistY: 50
   lowSpeed: 0
-  startPos: {x: 0, y: 0}
+  target: {fileID: 1841310342}
+  fract: .0299999993
 --- !u!23 &1076916459
 Renderer:
   m_ObjectHideFlags: 0
@@ -1996,6 +1996,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 272988852}
   m_RootOrder: 0
+--- !u!1 &1841310341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1841310342}
+  - 114: {fileID: 1841310343}
+  m_Layer: 0
+  m_Name: CopyCat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841310342
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841310341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 477912352}
+  m_RootOrder: 1
+--- !u!114 &1841310343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841310341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f8e592823b35f479ae49db0de1ecba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startX: 0
+  startY: 0
+  laneSwitchOffset: 3.375
+  startPos: {x: 0, y: 0}
+  minSwipeDistX: 50
+  minSwipeDistY: 50
 --- !u!1 &1846449254
 GameObject:
   m_ObjectHideFlags: 0

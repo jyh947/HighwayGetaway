@@ -25,8 +25,10 @@ public class Car : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		distanceTraveled = transform.position.z;
-		transform.Translate(0f, 0f, speed * Time.deltaTime);
+		//transform.Translate(0f, 0f, speed * Time.deltaTime);
 		transform.position = Vector3.Lerp (transform.position, target.position, fract);
+		//iTween.MoveTo (gameObject, CopyCat.getTransform().position, Time.deltaTime);
+
 		if (speed < Globals.LosingVelocity) {
 			lowSpeed++;
 		} else {

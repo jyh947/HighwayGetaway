@@ -10,6 +10,7 @@ public class CopyCat : MonoBehaviour {
 	public float minSwipeDistY;
 	public static float speed = Globals.StartingVelocity;
 	public static float distanceTraveled = 0f;
+	public static Transform transformCopy;
 
 	void Start () {
 		speed = Globals.StartingVelocity;
@@ -19,6 +20,7 @@ public class CopyCat : MonoBehaviour {
 	}
 
 	void Update () {
+		transformCopy = transform;
 		distanceTraveled = transform.position.z;
 		transform.Translate(0f, 0f, speed * Time.deltaTime);
 		// Input handling
@@ -80,6 +82,11 @@ public class CopyCat : MonoBehaviour {
 	public static float getSpeed()
 	{
 		return speed;
+	}
+
+	public static Transform getTransform()
+	{
+		return transformCopy;
 	}
 
 	void moveUp()

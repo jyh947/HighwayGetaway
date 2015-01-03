@@ -8,8 +8,7 @@ public class RoadManager : MonoBehaviour {
 	public Transform dividerPrefab;
 	public Transform roadTilePrefab;
 	
-	public static int minLanes = 5;
-	public static int maxLanes = 5;
+	public static int numLanes = 10;
 
 	public int maxRoadLength = 10;
 	public int recycleOffset = 5;
@@ -34,8 +33,6 @@ public class RoadManager : MonoBehaviour {
 	private static float roadTileWidth;
 	private static float tileOffset; // horizontal distance between two road/divider tiles
 
-	public static int numLanes = 5;
-	
 	private float timeUntilRoadChange = 3f;
 
 	// Use this for initialization
@@ -95,21 +92,6 @@ public class RoadManager : MonoBehaviour {
 		Debug.Log (dividerQueue.Count);
 		*/
 
-		// After time limit, change road
-		timeUntilRoadChange -= Time.deltaTime;
-		if (timeUntilRoadChange <= 0) {
-			// Generate new time to wait until road change
-			timeUntilRoadChange = Random.Range (minChangeTime, maxChangeTime);
-
-			// Generate new numer of lanes
-
-			// Generate starting position of the lanes
-			int startLane = (int)Random.Range(0, 4 - numLanes + 1);
-			Debug.Log("startLane: " + startLane);
-			startPosition.x = originalStartPosition.x + startLane * tileOffset * 2;
-			nextPosition.x = startPosition.x;
-		}
-
 		// If the car is past a certain point, construct the road up front
 		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTraveled ()) {
 			constructRoad ();
@@ -150,10 +132,6 @@ public class RoadManager : MonoBehaviour {
 	
 	public static int getNumLanes() {
 		return numLanes;
-	}
-
-	public static int getMaxLanes() {
-		return maxLanes; 
 	}
 
 	public static float getRoadWidth() {

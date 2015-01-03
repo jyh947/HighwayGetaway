@@ -7,4 +7,6 @@ public static class Globals {
 	public static float MinVelocity = 6f;
 	public static float StartingVelocity = 12f;
 	public static float LosingVelocity = 10f;
+	public static float LeftBorder = 3f;
+	public static float RightBorder = 14f;
 }

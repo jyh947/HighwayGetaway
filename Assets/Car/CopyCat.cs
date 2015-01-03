@@ -24,17 +24,13 @@ public class CopyCat : MonoBehaviour {
 		// Input handling
 		
 		if (Input.GetKeyDown ("up")) {
-			if(speed < Globals.MaxVelocity){
-				speed += Globals.SwipeVelocityChange;
-			}
+			moveUp();
 		} else if (Input.GetKeyDown ("down")) {
-			if(speed > Globals.MinVelocity){
-				speed -= Globals.SwipeVelocityChange;
-			}
+			moveDown();
 		}else if (Input.GetKeyDown ("left")) {
-			transform.Translate (-laneSwitchOffset, 0f, 0f);
+			moveLeft();
 		} else if (Input.GetKeyDown ("right")) {
-			transform.Translate (laneSwitchOffset, 0f, 0f);
+			moveRight();
 		} 
 		if (Input.touchCount > 0) 
 		{
@@ -52,14 +48,10 @@ public class CopyCat : MonoBehaviour {
 				{
 					float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
 					if (swipeValue > 0){
-						if(speed < Globals.MaxVelocity){
-							speed += Globals.SwipeVelocityChange;
-						}
+						moveUp();
 					}
 					else if (swipeValue < 0){
-						if(speed > Globals.MinVelocity){
-							speed -= Globals.SwipeVelocityChange;
-						}
+						moveDown();
 					}
 				}
 				
@@ -68,10 +60,10 @@ public class CopyCat : MonoBehaviour {
 				{
 					float swipeValue = Mathf.Sign(touch.position.x - startPos.x);
 					if (swipeValue < 0){
-						transform.Translate (-laneSwitchOffset, 0f, 0f);
+						moveLeft();
 					}	
 					else if (swipeValue > 0){
-						transform.Translate (laneSwitchOffset, 0f, 0f);
+						moveRight();
 					}
 				}
 				break;
@@ -88,5 +80,33 @@ public class CopyCat : MonoBehaviour {
 	public static float getSpeed()
 	{
 		return speed;
+	}
+
+	void moveUp()
+	{
+		if(speed < Globals.MaxVelocity){
+			speed += Globals.SwipeVelocityChange;
+		}
+	}
+	
+	void moveDown()
+	{
+		if(speed > Globals.MinVelocity){
+			speed -= Globals.SwipeVelocityChange;
+		}
+	}
+	
+	void moveLeft()
+	{
+		if (transform.position.x > Globals.LeftBorder) {
+			transform.Translate (-laneSwitchOffset, 0f, 0f);
+		}
+	}
+	
+	void moveRight()
+	{
+		if (transform.position.x < Globals.RightBorder) {
+			transform.Translate (laneSwitchOffset, 0f, 0f);
+		}
 	}
 }

@@ -13,14 +13,14 @@ public class RoadManager : MonoBehaviour {
 	public int maxRoadLength = 10;
 	public int recycleOffset = 5;
 
-	public int maxRoadTileObjects = 120;
-
 	public float minChangeTime = 3f;
 	public float maxChangeTime = 6f;
 	
-	public Vector3 originalStartPosition;
-	private Vector3 startPosition;
+	public Vector3 startPosition;
 	private Vector3 nextPosition;
+
+	private int maxRoadTileObjects = 120;
+	private int maxDividerObjects = 200;
 	
 	private Queue<Transform> leftBorderQueue;
 	private Queue<Transform> rightBorderQueue;
@@ -28,6 +28,7 @@ public class RoadManager : MonoBehaviour {
 	private Queue<Transform> roadTileQueue;
 
 	private static float tileHeight;
+	private static float dividerHeight;
 	private static float borderWidth;
 	private static float dividerWidth;
 	private static float roadTileWidth;
@@ -37,6 +38,9 @@ public class RoadManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		maxRoadTileObjects = numLanes * maxRoadLength;
+		maxDividerObjects = 12 * maxRoadTileObjects;
+
 		// Construct queues
 		leftBorderQueue = new Queue<Transform> (maxRoadTileObjects);
 		rightBorderQueue = new Queue<Transform> (maxRoadTileObjects);
@@ -47,8 +51,10 @@ public class RoadManager : MonoBehaviour {
 		for (int i = 0; i < maxRoadTileObjects; ++i) {
 			leftBorderQueue.Enqueue((Transform)Instantiate(leftBorderPrefab));
 			rightBorderQueue.Enqueue((Transform)Instantiate(rightBorderPrefab));
-			dividerQueue.Enqueue((Transform)Instantiate(dividerPrefab));
 			roadTileQueue.Enqueue((Transform)Instantiate(roadTilePrefab));
+		}
+		for (int i = 0; i < maxDividerObjects; ++i) {
+			dividerQueue.Enqueue((Transform)Instantiate(dividerPrefab));
 		}
 
 		// Get prefab dimensions
@@ -59,6 +65,7 @@ public class RoadManager : MonoBehaviour {
 
 		r = dividerQueue.Peek().GetComponent<Renderer>();
 		dividerWidth = r.bounds.size.x;
+		dividerHeight = r.bounds.size.z;
 
 		r = roadTileQueue.Peek().GetComponent<Renderer> ();
 		roadTileWidth = r.bounds.size.x;
@@ -76,8 +83,7 @@ public class RoadManager : MonoBehaviour {
 		// Generate random numbers
 
 		// set tiles to locations
-		nextPosition = originalStartPosition;
-		startPosition = originalStartPosition;
+		nextPosition = startPosition;
 		for (int i = 0; i < maxRoadLength; ++i) {
 			constructRoad();
 		}
@@ -111,9 +117,14 @@ public class RoadManager : MonoBehaviour {
 			roadTileQueue.Enqueue(roadTile);
 			nextPosition.x += tileOffset;
 
-			divider = dividerQueue.Dequeue();
-			divider.localPosition = nextPosition;
-			dividerQueue.Enqueue(divider);
+			float tempZ = nextPosition.z;
+			for (int j = 0; j < tileHeight/dividerHeight; ++j) {
+				divider = dividerQueue.Dequeue();
+				divider.localPosition = nextPosition;
+				dividerQueue.Enqueue(divider);
+				nextPosition.z += dividerHeight;
+			}
+			nextPosition.z = tempZ;
 			nextPosition.x += tileOffset;
 		}
 

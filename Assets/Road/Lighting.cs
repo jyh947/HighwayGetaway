@@ -3,10 +3,14 @@ using System.Collections.Generic;
 
 public class Lighting : MonoBehaviour {
 
-	public float slider;
+	public static float slider;
+	public float intensity;
 	public float hour;
 	public float timeOfDay;
 	public float speed = 50;
+
+	public float dawnThreshold;
+	public float duskThreshold;
 
 	// Colors
 	public Color sunNight;
@@ -22,8 +26,9 @@ public class Lighting : MonoBehaviour {
 	public Transform streetLampPrefab;
 	public float streetLampDistance;
 	public float roadWidth = 10f;
+	public static float streetLampIntensity = 0.6f;
 
-	private Queue<Transform> streetLampQueue;
+	private static Queue<Transform> streetLampQueue;
 	private Vector3 nextPosition;
 	private int roadSide = 1;
 
@@ -40,7 +45,7 @@ public class Lighting : MonoBehaviour {
 		slider += Time.deltaTime / speed;
 
 		sun.color = Color.Lerp (sunNight, sunDay, slider * 2);
-		sun.intensity = (slider - 0.2f) * 1f;
+		sun.intensity = intensity;//(slider - 0.2f) * 1f;
 	}
 
 	// Use this for initialization
@@ -68,6 +73,12 @@ public class Lighting : MonoBehaviour {
 		    	< Car.getDistanceTraveled ()) {
 			constructLamps ();
 		}
+
+		if ((0 < slider && slider < dawnThreshold) || (duskThreshold < slider && slider < 1)) {
+			turnLampsOn();
+		} else {
+			turnLampsOff();
+		}
 	}
 
 	private void constructLamps() {
@@ -79,5 +90,17 @@ public class Lighting : MonoBehaviour {
 		nextPosition.z += streetLampDistance;
 
 		roadSide *= -1;
+	}
+
+	public static void turnLampsOff() {
+		foreach (Transform lamp in streetLampQueue) {
+			lamp.Find("Spotlight").GetComponent<Light>().intensity = 0;
+		}
+	}
+
+	public static void turnLampsOn() {
+		foreach (Transform lamp in streetLampQueue) {
+			lamp.Find("Spotlight").GetComponent<Light>().intensity = streetLampIntensity;
+		}
 	}
 }

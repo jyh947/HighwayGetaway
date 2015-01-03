@@ -74,8 +74,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.85764289, y: 1.49775028, z: -.183456659}
-  m_LocalScale: {x: .25, y: 5, z: .25}
+  m_LocalPosition: {x: -3.85764289, y: 1.5, z: -.183456659}
+  m_LocalScale: {x: .25, y: 10, z: .25}
   m_Children: []
   m_Father: {fileID: 422636}
   m_RootOrder: 0
@@ -86,8 +86,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110432}
   m_LocalRotation: {x: .5, y: .5, z: -.5, w: .5}
-  m_LocalPosition: {x: -2.85764289, y: 6.49775028, z: -.183456659}
-  m_LocalScale: {x: .25, y: 1, z: .25}
+  m_LocalPosition: {x: -2.48000002, y: 6.49775028, z: -.183456659}
+  m_LocalScale: {x: .25, y: 3, z: .25}
   m_Children: []
   m_Father: {fileID: 422636}
   m_RootOrder: 1
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110434}
   m_LocalRotation: {x: .379928231, y: .596367836, z: -.379928231, w: .596367836}
-  m_LocalPosition: {x: -1.85764289, y: 6.49775028, z: -.183456659}
+  m_LocalPosition: {x: -1, y: 6.49775028, z: -.183456659}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422636}
@@ -164,14 +164,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110430}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3310434
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110432}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!108 &10810434
 Light:
   m_ObjectHideFlags: 1
@@ -182,7 +182,7 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: .963235319, g: .957373857, b: .750756919, a: 1}
-  m_Intensity: .600000024
+  m_Intensity: .200000003
   m_Range: 37
   m_SpotAngle: 132
   m_CookieSize: 10

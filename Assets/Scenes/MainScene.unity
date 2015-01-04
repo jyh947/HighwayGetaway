@@ -769,6 +769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a907922e40bfdd14e9bf68e772b18e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carType1: {fileID: 0}
+  carType2: {fileID: 0}
+  carType3: {fileID: 0}
+  numCars: 0
 --- !u!1001 &799507993
 Prefab:
   m_ObjectHideFlags: 0
@@ -778,7 +782,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -932,7 +936,7 @@ Transform:
   m_PrefabInternal: {fileID: 799507993}
   m_GameObject: {fileID: 1076916456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: .5, z: 0}
+  m_LocalPosition: {x: 0, y: .5, z: 0}
   m_LocalScale: {x: 1.45000005, y: 1, z: 2.70000005}
   m_Children: []
   m_Father: {fileID: 477912352}
@@ -1209,7 +1213,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 93188902fc8df8648b585fd9869043dd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1487,6 +1491,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.45000005
       objectReference: {fileID: 0}
+    - target: {fileID: 2355192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 93188902fc8df8648b585fd9869043dd, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
   m_RootGameObject: {fileID: 1451906131}

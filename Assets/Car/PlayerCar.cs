@@ -10,11 +10,11 @@ public class PlayerCar : BaseCar {
 	public int lowSpeedCounter = 0;
 
 	public static float distanceTraveled;
-	public static float playerSpeed = 0f;
+	public static float playerSpeed;
 
 	override protected void Start() {
 		base.Start ();
-
+		playerSpeed = 0f;
 		distanceTraveled = 0f;
 
 	}

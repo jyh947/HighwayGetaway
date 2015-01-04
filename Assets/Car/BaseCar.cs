@@ -4,7 +4,7 @@ using System.Collections;
 public class BaseCar : MonoBehaviour {
 
 	// Statics
-	public float startX = 2f;
+	public float startX = 0f;
 	public float startY = 0.5f;
 	public float startZ = 0f;
 
@@ -18,7 +18,8 @@ public class BaseCar : MonoBehaviour {
 	virtual protected void Start () {
 		// Generate random car properties
 		speed = Globals.StartingVelocity;
-		int startingLane = (int)Random.Range (0, RoadManager.numLanes);
+		//int startingLane = (int)Random.Range (0, RoadManager.numLanes);
+		int startingLane = 2;
 		transform.position = new Vector3 (startX + startingLane * RoadManager.laneSwitchOffset, startY, startZ);
 
 		// Instantiate CopyCat object from your position and rotation

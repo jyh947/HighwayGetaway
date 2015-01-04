@@ -291,6 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba1bd7af0002740b31e91e12fb657d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocityText: {fileID: 0}
+  distanceText: {fileID: 0}
+  counter: 0
 --- !u!4 &748927186
 Transform:
   m_ObjectHideFlags: 0
@@ -474,10 +477,9 @@ MonoBehaviour:
   roadTilePrefab: {fileID: 490576, guid: 3be2e65e5739e3f459eb0794c9a41e18, type: 2}
   maxRoadLength: 10
   recycleOffset: 4
-  maxRoadTileObjects: 100
   minChangeTime: 3
   maxChangeTime: 6
-  originalStartPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1601866935
 GameObject:
   m_ObjectHideFlags: 0

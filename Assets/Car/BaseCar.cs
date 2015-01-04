@@ -56,6 +56,7 @@ public class BaseCar : MonoBehaviour {
 		if(speed < Globals.MaxVelocity){
 			speed += Globals.SwipeVelocityChange;
 		}
+		GUIManager.SetUp ();
 	}
 	
 	public void moveDown()
@@ -63,6 +64,7 @@ public class BaseCar : MonoBehaviour {
 		if(speed > Globals.MinVelocity){
 			speed -= Globals.SwipeVelocityChange;
 		}
+		GUIManager.SetDown ();
 	}
 	
 	public void moveLeft()
@@ -70,6 +72,7 @@ public class BaseCar : MonoBehaviour {
 		if (target.x > Globals.LeftBorder) {
 			target.x += -RoadManager.laneSwitchOffset;
 		}
+		GUIManager.SetLeft ();
 	}
 	
 	public void moveRight()
@@ -77,5 +80,6 @@ public class BaseCar : MonoBehaviour {
 		if (target.x < Globals.RightBorder) {
 			target.x += RoadManager.laneSwitchOffset;
 		}
+		GUIManager.SetRight ();
 	}
 }

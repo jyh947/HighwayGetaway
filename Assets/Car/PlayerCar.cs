@@ -4,13 +4,13 @@ using System.Collections;
 public class PlayerCar : BaseCar {
 
 	// Input related vars
-	public float minSwipeDistX;
-	public float minSwipeDistY;
+	public float minSwipeDistX = 50f;
+	public float minSwipeDistY = 50f;
 
 	public int lowSpeedCounter = 0;
 
-	public static float distanceTraveled;
-	public static float playerSpeed;
+	public static float distanceTraveled = 0f;
+	public static float playerSpeed = 0f;
 
 	override protected void Start() {
 		base.Start ();
@@ -52,19 +52,17 @@ public class PlayerCar : BaseCar {
 		} else if (Input.GetKeyDown ("right")) {
 			moveRight();
 		} 
-		if (Input.touchCount > 0) 
+		if (Input.touchCount > 0)
 		{
 			Touch touch = Input.touches[0];
-			
-			switch (touch.phase) 
+			switch (touch.phase)
 			{
 			case TouchPhase.Began:
 				startPos = touch.position;
 				break;
-				
 			case TouchPhase.Ended:
 				float swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
-				if (swipeDistVertical > minSwipeDistY) 	
+				if (swipeDistVertical > minSwipeDistY)
 				{
 					float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
 					if (swipeValue > 0){
@@ -74,14 +72,13 @@ public class PlayerCar : BaseCar {
 						moveDown();
 					}
 				}
-				
 				float swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
-				if (swipeDistHorizontal > minSwipeDistX)	
+				if (swipeDistHorizontal > minSwipeDistX)
 				{
 					float swipeValue = Mathf.Sign(touch.position.x - startPos.x);
 					if (swipeValue < 0){
 						moveLeft();
-					}	
+					}
 					else if (swipeValue > 0){
 						moveRight();
 					}

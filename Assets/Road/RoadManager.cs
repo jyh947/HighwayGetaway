@@ -15,6 +15,9 @@ public class RoadManager : MonoBehaviour {
 
 	public float minChangeTime = 3f;
 	public float maxChangeTime = 6f;
+
+	public static float laneSwitchOffset = 3.375f;
+	public static Transform copyCat;
 	
 	public Vector3 startPosition;
 	private Vector3 nextPosition;
@@ -99,7 +102,7 @@ public class RoadManager : MonoBehaviour {
 		*/
 
 		// If the car is past a certain point, construct the road up front
-		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < Car.getDistanceTraveled ()) {
+		if (roadTileQueue.Peek ().localPosition.z + recycleOffset * tileHeight < PlayerCar.getDistanceTraveled ()) {
 			constructRoad ();
 		}
 	}
@@ -147,5 +150,9 @@ public class RoadManager : MonoBehaviour {
 
 	public static float getRoadWidth() {
 		return numLanes * roadTileWidth + (numLanes - 1) * dividerWidth + 2 * borderWidth;
+	}
+
+	public static Transform getCopyCat() {
+		return copyCat;
 	}
 }

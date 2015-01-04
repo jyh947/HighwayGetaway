@@ -13,11 +13,11 @@ public class GUIManager : MonoBehaviour {
 	}
 	
 	public static void SetVelocity(){
-		instance.velocityText.text = Car.getSpeed().ToString();
+		instance.velocityText.text = PlayerCar.getSpeed().ToString();
 	}
 	
 	public static void SetDistance(){
-		int score = ((int)Car.getDistanceTraveled ()) / 7;
+		int score = ((int)PlayerCar.getDistanceTraveled ()) / 7;
 		instance.distanceText.text = score.ToString();
 	}
 

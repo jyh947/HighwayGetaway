@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Lighting : MonoBehaviour {
+public class LightingManager : MonoBehaviour {
 
 	public static float slider;
 	public float intensity;
@@ -70,7 +70,7 @@ public class Lighting : MonoBehaviour {
 		// Create Street Lamps
 
 		if (streetLampQueue.Peek ().localPosition.z + recycleOffset * streetLampDistance 
-		    	< Car.getDistanceTraveled ()) {
+		    	< PlayerCar.getDistanceTraveled ()) {
 			constructLamps ();
 		}
 

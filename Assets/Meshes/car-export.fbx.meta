@@ -1,32 +1,12 @@
 fileFormatVersion: 2
-guid: 840ddbffccdba4622a0d7492ab1e1e85
+guid: 461bac3201d8b43b49e9c6764a20682f
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: back
-    100002: bottom
-    100004: carBody
-    100006: carBody2
-    100008: //RootNode
-    100010: imagePlane3
-    100012: pCylinder1
-    100014: pCylinder2
-    100016: transform1
-    100018: transform2
-    100020: transform3
-    400000: back
-    400002: bottom
-    400004: carBody
-    400006: carBody2
-    400008: //RootNode
-    400010: imagePlane3
-    400012: pCylinder1
-    400014: pCylinder2
-    400016: transform1
-    400018: transform2
-    400020: transform3
-    2300000: carBody2
-    3300000: carBody2
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: carBody2
     9500000: //RootNode
   materials:
@@ -48,7 +28,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

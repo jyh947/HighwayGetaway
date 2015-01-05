@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SportsCar : MonoBehaviour {
+public class SportsCar : BaseCar {
 
 	public float startX = 0f;
 	public float startY = 0f;
 	public float laneSwitchOffset = 3.375f;
-	public static float speed = 7f;
+	public static float speed = 11f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class SportsCar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		transform.Translate(0f, 0f, speed * Time.deltaTime);
+		transform.Translate(0f, 0f, speed * Time.deltaTime);
 //		if (transform.position.z < CopyCat.getDistanceTraveled() - 20f) {
 //			//destroy car here
 //		}

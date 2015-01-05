@@ -7,7 +7,6 @@ public class CarManager : MonoBehaviour {
 	public BaseCar carType2; //MiniVan
 	public BaseCar carType3; //SemiTruck
 
-	public int numCars;
 
 	private static List<BaseCar> carTypes = new List<BaseCar>();
 	private static List<BaseCar> carList = new List<BaseCar>();
@@ -21,6 +20,7 @@ public class CarManager : MonoBehaviour {
 
 		// Generate random cars based on type list
 		int type = 0;
+		int numCars = (int)Random.Range (0, 4);
 		for (int i = 0; i < numCars; ++i) {
 			type = (int)Random.Range(0, carTypes.Count);
 			carList.Add ((BaseCar)Instantiate (carTypes[i]));

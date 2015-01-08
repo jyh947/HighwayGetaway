@@ -1188,6 +1188,7 @@ MonoBehaviour:
   minSwipeDistX: 50
   minSwipeDistY: 50
   lowSpeedCounter: 500
+  timeOfSlow: 0
   startPos: {x: 0, y: 0}
 --- !u!23 &1076916459
 Renderer:
@@ -1628,6 +1629,7 @@ MonoBehaviour:
   minSwipeDistX: 50
   minSwipeDistY: 50
   lowSpeedCounter: 500
+  timeOfSlow: 0
   startPos: {x: 0, y: 0}
 --- !u!65 &1551553609
 BoxCollider:

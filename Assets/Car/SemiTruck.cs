@@ -2,14 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class SemiTruck : BaseCar {
-	
-	public float startX = 0f;
-	public float startY = 0f;
-	public float laneSwitchOffset = 3.375f;
-	public static float speed = 4f;
-	
+
 	// Use this for initialization
-	void Start () {
+	override protected void Start () {
+		speed = 4f;
 		//		// Generate random numbers about where to start
 		//		int startingLane = (int)Random.Range (0, RoadManager.numLanes - 1);
 		//		//int startingLane = 1;
@@ -18,7 +14,7 @@ public class SemiTruck : BaseCar {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	override protected void Update () {
 		transform.Translate(0f, 0f, speed * Time.deltaTime);
 		//		if (transform.position.z < CopyCat.getDistanceTraveled() - 20f) {
 		//			//destroy car here

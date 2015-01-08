@@ -21,7 +21,7 @@ public class PlayerCar : BaseCar {
 		speed = Globals.StartingVelocity;
 		playerSpeed = 0f;
 		distanceTraveled = 0f;
-
+		Physics.gravity = new Vector3(0, 0, 0);
 	}
 
 	override protected void Update() {
@@ -38,8 +38,10 @@ public class PlayerCar : BaseCar {
 			// Check GameOver state
 			if (speed < Globals.LosingVelocity) {
 				if ((Time.time - timeOfSlow) > Globals.LosingSeconds) { // i think something else should be responsible for this but this is fine for now
-					GUIManager.GameOver();
 					Globals.GameOver = true;
+					speed = 0;
+					Physics.gravity = new Vector3(0, -9.81F, 0);
+					GUIManager.GameOver();
 				}
 			} else {
 				timeOfSlow = Time.time;
@@ -121,14 +123,14 @@ public class PlayerCar : BaseCar {
 	{
 		if (collisionInfo.collider.name == "MiniVan" || collisionInfo.collider.name == "SemiTruck"
 		    || collisionInfo.collider.name == "SportsCar") {
-			Globals.GameOver = true;
 			print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
 			print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
 			print("Their relative velocity is " + collisionInfo.relativeVelocity);
+			Globals.GameOver = true;
 			speed = 0;
-			moveUp ();
-			//Application.LoadLevel("GameOver");
+			Physics.gravity = new Vector3(0, -9.81F, 0);
 			GUIManager.GameOver();
+			//Application.LoadLevel("GameOver");
 		}
 	}
 

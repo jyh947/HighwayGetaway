@@ -107,9 +107,13 @@ public class PlayerCar : BaseCar {
 
 	void OnCollisionEnter(Collision collisionInfo)
 	{
-		print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
-		print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
-		print("Their relative velocity is " + collisionInfo.relativeVelocity);
+		if (collisionInfo.collider.name == "MiniVan" || collisionInfo.collider.name == "SemiTruck"
+		    || collisionInfo.collider.name == "SportsCar") {
+			print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
+			print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
+			print("Their relative velocity is " + collisionInfo.relativeVelocity);
+			Application.LoadLevel("GameOver");
+		}
 	}
 
 	//Application.LoadLevel ("GameOver");

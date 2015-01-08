@@ -14,11 +14,14 @@ public class BaseCar : MonoBehaviour {
 	
 	public float fract;
 
+	public float minSpeed;
+	public float maxSpeed;
+
 	public float speed;
 
 	virtual protected void Start () {
 		// Generate random car properties
-		speed = Globals.StartingVelocity;
+		speed = Random.Range (minSpeed, maxSpeed);
 		//int startingLane = (int)Random.Range (0, RoadManager.numLanes);
 		int startingLane = 2;
 		transform.position = new Vector3 (startX + startingLane * RoadManager.laneSwitchOffset, startY, startZ);

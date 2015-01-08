@@ -5,7 +5,7 @@ public class SemiTruck : BaseCar {
 
 	// Use this for initialization
 	override protected void Start () {
-		speed = 4f;
+		base.Start ();
 		//		// Generate random numbers about where to start
 		//		int startingLane = (int)Random.Range (0, RoadManager.numLanes - 1);
 		//		//int startingLane = 1;
@@ -15,7 +15,7 @@ public class SemiTruck : BaseCar {
 	
 	// Update is called once per frame
 	override protected void Update () {
-		transform.Translate(0f, 0f, speed * Time.deltaTime);
+		base.Update ();
 		//		if (transform.position.z < CopyCat.getDistanceTraveled() - 20f) {
 		//			//destroy car here
 		//		}

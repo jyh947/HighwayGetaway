@@ -14,6 +14,9 @@ public class CarManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		carTypes = new List<BaseCar>(3);
+		carList = new List<BaseCar>(numCars);
+
 		// Add different types to list
 		carTypes.Add (carType1);
 		carTypes.Add (carType2);
@@ -23,10 +26,8 @@ public class CarManager : MonoBehaviour {
 		int type = 0;
 		for (int i = 0; i < numCars; ++i) {
 			type = (int)Random.Range(0, carTypes.Count);
-			carList.Add ((BaseCar)Instantiate (carTypes[i]));
+			carList.Add ((BaseCar)Instantiate (carTypes[type]));
 		}
-
-
 	}
 	
 	// Update is called once per frame

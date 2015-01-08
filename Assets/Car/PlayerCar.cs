@@ -16,6 +16,7 @@ public class PlayerCar : BaseCar {
 
 	override protected void Start() {
 		base.Start ();
+		speed = Globals.StartingVelocity;
 		playerSpeed = 0f;
 		distanceTraveled = 0f;
 

@@ -796,7 +796,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
+  startZ: 0
   laneSwitchOffset: 3.375
+  fract: 0
+  speed: 0
 --- !u!23 &625297319
 Renderer:
   m_ObjectHideFlags: 0
@@ -1386,6 +1389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityText: {fileID: 1689782378}
   distanceText: {fileID: 583592987}
+  directionText: {fileID: 910369091}
   counter: 0
 --- !u!1 &1171085518
 GameObject:
@@ -1542,7 +1546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
+  startZ: 0
   laneSwitchOffset: 3.375
+  fract: 0
+  speed: 0
 --- !u!23 &1451906133
 Renderer:
   m_ObjectHideFlags: 0
@@ -2033,7 +2040,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
+  startZ: 0
   laneSwitchOffset: 3.375
+  fract: 0
+  speed: 0
 --- !u!23 &1696304988
 Renderer:
   m_ObjectHideFlags: 0

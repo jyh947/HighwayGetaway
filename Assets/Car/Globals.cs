@@ -10,4 +10,5 @@ public static class Globals {
 	public static float LosingFrames = 10000f;
 	public static float LeftBorder = 3f;
 	public static float RightBorder = 14f;
+	public static bool GameOver = false;
 }

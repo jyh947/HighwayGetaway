@@ -3,7 +3,7 @@
 public class GUIManager : MonoBehaviour {
 
 	private static GUIManager instance;
-	public GUIText velocityText, distanceText, directionText;
+	public GUIText velocityText, distanceText, directionText, gameOverText;
 	public int counter = 0;
 	public static bool left = false, right = false, up = false, down = false;
 
@@ -12,8 +12,18 @@ public class GUIManager : MonoBehaviour {
 		velocityText.enabled = true;
 		distanceText.enabled = true;
 		directionText.enabled = true;
+		gameOverText.enabled = false;
 	}
 	
+	public static void GameOver(){
+		instance.velocityText.enabled = false;
+		instance.distanceText.enabled = false;
+		instance.directionText.enabled = false;
+		instance.gameOverText.enabled = true;
+		if (GUI.Button(new Rect(10, 70, 50, 30), "Click"))
+			Debug.Log("Clicked the button with text");
+	}
+
 	public static void SetVelocity(){
 		instance.velocityText.text = PlayerCar.getSpeed().ToString();
 	}

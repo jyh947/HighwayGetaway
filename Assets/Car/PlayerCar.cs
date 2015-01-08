@@ -15,6 +15,7 @@ public class PlayerCar : BaseCar {
 	public Vector2 startPos;
 
 	override protected void Start() {
+		Globals.GameOver = false;
 		base.Start ();
 		speed = Globals.StartingVelocity;
 		playerSpeed = 0f;
@@ -24,23 +25,26 @@ public class PlayerCar : BaseCar {
 
 	override protected void Update() {
 
-		handleInputs ();
-		
-		distanceTraveled = transform.position.z;
-		playerSpeed = speed;
-		//transform.Translate(0f, 0f, speed * Time.deltaTime);
-
-		base.Update ();
-
-		// Check GameOver state
-		if (speed < Globals.LosingVelocity) {
-			lowSpeedCounter++;
-		} else {
-			lowSpeedCounter = 0;
-		}
-		
-		if (lowSpeedCounter > Globals.LosingFrames) { // i think something else should be responsible for this but this is fine for now
-			Application.LoadLevel("GameOver");
+		if (!Globals.GameOver) {
+			handleInputs ();
+			distanceTraveled = transform.position.z;
+			playerSpeed = speed;
+			
+			//transform.Translate(0f, 0f, speed * Time.deltaTime);
+			
+			base.Update ();
+			
+			// Check GameOver state
+			if (speed < Globals.LosingVelocity) {
+				lowSpeedCounter++;
+			} else {
+				lowSpeedCounter = 0;
+			}
+			
+			if (lowSpeedCounter > Globals.LosingFrames) { // i think something else should be responsible for this but this is fine for now
+				GUIManager.GameOver();
+				Globals.GameOver = true;
+			}
 		}
 	}
 
@@ -109,10 +113,13 @@ public class PlayerCar : BaseCar {
 	{
 		if (collisionInfo.collider.name == "MiniVan" || collisionInfo.collider.name == "SemiTruck"
 		    || collisionInfo.collider.name == "SportsCar") {
+			Globals.GameOver = true;
 			print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
 			print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
 			print("Their relative velocity is " + collisionInfo.relativeVelocity);
-			Application.LoadLevel("GameOver");
+			speed = 0;
+			//Application.LoadLevel("GameOver");
+			GUIManager.GameOver();
 		}
 	}
 

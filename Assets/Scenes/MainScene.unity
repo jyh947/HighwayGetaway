@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 257217582}
   - 114: {fileID: 257217583}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GrassManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,6 +438,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
@@ -454,7 +458,7 @@ GameObject:
   - 4: {fileID: 403878928}
   - 108: {fileID: 403878927}
   - 114: {fileID: 403878929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LightingManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +714,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 583592986}
   - 132: {fileID: 583592987}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Distance Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +768,7 @@ GameObject:
   - 65: {fileID: 625297320}
   - 23: {fileID: 625297319}
   - 114: {fileID: 625297318}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SemiTruck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +902,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 720876261}
   - 114: {fileID: 720876262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CarManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,7 +1012,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 883061037}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,6 +1032,7 @@ Transform:
   - {fileID: 1689782377}
   - {fileID: 583592986}
   - {fileID: 910369090}
+  - {fileID: 1708433736}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &910369089
@@ -1039,7 +1044,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 910369090}
   - 132: {fileID: 910369091}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Direction Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,6 +1272,7 @@ MonoBehaviour:
   velocityText: {fileID: 1689782378}
   distanceText: {fileID: 583592987}
   directionText: {fileID: 910369091}
+  gameOverText: {fileID: 1708433737}
   counter: 0
 --- !u!1 &1171085518
 GameObject:
@@ -1434,6 +1440,10 @@ Prefab:
       propertyPath: startZ
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 194046, guid: 00f2c3f7566a2724ab2cbfdb09c8791d, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f2c3f7566a2724ab2cbfdb09c8791d, type: 2}
   m_RootGameObject: {fileID: 1451906131}
@@ -1451,7 +1461,7 @@ GameObject:
   - 65: {fileID: 1451906134}
   - 23: {fileID: 1451906133}
   - 114: {fileID: 1451906132}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SportsCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1585,7 @@ GameObject:
   - 65: {fileID: 1551553609}
   - 114: {fileID: 1551553608}
   - 54: {fileID: 1551553612}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlayerCar
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1669,7 +1679,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1757,7 +1767,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1601866936}
   - 114: {fileID: 1601866937}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RoadManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1814,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1665347113}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1846,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1689782377}
   - 132: {fileID: 1689782378}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Velocity Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1890,7 +1900,7 @@ GameObject:
   - 65: {fileID: 1696304989}
   - 23: {fileID: 1696304988}
   - 114: {fileID: 1696304987}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MiniVan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1971,6 +1981,59 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1731258981}
   m_GameObject: {fileID: 1696304985}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1708433735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1708433736}
+  - 132: {fileID: 1708433737}
+  m_Layer: 5
+  m_Name: Game Over Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708433736
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708433735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883061037}
+  m_RootOrder: 3
+--- !u!132 &1708433737
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708433735}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Game
+
+    Over!'
+  m_Anchor: 4
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1001 &1731258981
 Prefab:
   m_ObjectHideFlags: 0
@@ -2009,6 +2072,10 @@ Prefab:
     - target: {fileID: 499452, guid: 51485d98f803bea419c72d33a2e7a749, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199452, guid: 51485d98f803bea419c72d33a2e7a749, type: 2}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51485d98f803bea419c72d33a2e7a749, type: 2}
@@ -2325,7 +2392,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1874098114}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CPUs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2385,6 +2452,10 @@ Prefab:
     - target: {fileID: 428960, guid: e86723d71def06e498d061f798a8abbd, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 128960, guid: e86723d71def06e498d061f798a8abbd, type: 2}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e86723d71def06e498d061f798a8abbd, type: 2}
@@ -2516,7 +2587,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2020357556}
   - 108: {fileID: 2020357558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

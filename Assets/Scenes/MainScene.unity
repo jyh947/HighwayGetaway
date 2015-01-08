@@ -1570,6 +1570,7 @@ GameObject:
   - 23: {fileID: 1551553610}
   - 65: {fileID: 1551553609}
   - 114: {fileID: 1551553608}
+  - 54: {fileID: 1551553612}
   m_Layer: 0
   m_Name: PlayerCar
   m_TagString: Player
@@ -1655,6 +1656,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 359912979}
   m_GameObject: {fileID: 1551553606}
   m_Mesh: {fileID: 4300000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
+--- !u!54 &1551553612
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551553606}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1566789537
 GameObject:
   m_ObjectHideFlags: 0

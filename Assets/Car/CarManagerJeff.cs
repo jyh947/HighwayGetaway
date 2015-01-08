@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class CarManager : MonoBehaviour {
+public class CarManagerJeff : MonoBehaviour {
 
 	public BaseCar carType1; //SportsCar
 	public BaseCar carType2; //MiniVan

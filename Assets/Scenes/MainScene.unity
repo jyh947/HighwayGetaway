@@ -792,11 +792,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
-  startZ: 0
-  fract: 0
-  speed: 0
-  startX: 5.75
-  startY: .5
   laneSwitchOffset: 3.375
 --- !u!23 &625297319
 Renderer:
@@ -923,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a907922e40bfdd14e9bf68e772b18e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carType1: {fileID: 1451906132}
+  carType1: {fileID: 0}
   carType2: {fileID: 0}
   carType3: {fileID: 0}
   numCars: 0
@@ -1385,7 +1380,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityText: {fileID: 1689782378}
   distanceText: {fileID: 583592987}
-  directionText: {fileID: 910369091}
   counter: 0
 --- !u!1 &1171085518
 GameObject:
@@ -1540,11 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca64555e034a804c91e824574ebdb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startX: 5.75
-  startY: .5
-  startZ: 0
-  fract: 0
-  speed: 0
   startX: 5.75
   startY: .5
   laneSwitchOffset: 3.375
@@ -2034,11 +2023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca64555e034a804c91e824574ebdb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startX: 5.75
-  startY: .5
-  startZ: 0
-  fract: 0
-  speed: 0
   startX: 5.75
   startY: .5
   laneSwitchOffset: 3.375

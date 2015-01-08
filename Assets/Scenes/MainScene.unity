@@ -1430,6 +1430,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11494046, guid: 00f2c3f7566a2724ab2cbfdb09c8791d, type: 2}
+      propertyPath: startZ
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f2c3f7566a2724ab2cbfdb09c8791d, type: 2}
   m_RootGameObject: {fileID: 1451906131}
@@ -1468,7 +1472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
-  startZ: 0
+  startZ: 30
   laneSwitchOffset: 3.375
   fract: 0
   minSpeed: 11

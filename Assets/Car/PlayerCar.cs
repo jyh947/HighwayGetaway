@@ -11,6 +11,8 @@ public class PlayerCar : BaseCar {
 
 	public static float distanceTraveled = 0f;
 	public static float playerSpeed = 0f;
+	
+	public Vector2 startPos;
 
 	override protected void Start() {
 		base.Start ();
@@ -36,13 +38,12 @@ public class PlayerCar : BaseCar {
 			lowSpeedCounter = 0;
 		}
 		
-		if (lowSpeedCounter > 500) { // i think something else should be responsible for this but this is fine for now
+		if (lowSpeedCounter > Globals.LosingFrames) { // i think something else should be responsible for this but this is fine for now
 			Application.LoadLevel("GameOver");
 		}
 	}
 
 	private void handleInputs() {
-		Vector3 startPos = new Vector3();
 		if (Input.GetKeyDown ("up")) {
 			moveUp();
 		} else if (Input.GetKeyDown ("down")) {
@@ -102,5 +103,14 @@ public class PlayerCar : BaseCar {
 	public static float getSpeed() {
 		return playerSpeed;
 	}
+
+	void OnCollisionEnter(Collision collisionInfo)
+	{
+		print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
+		print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
+		print("Their relative velocity is " + collisionInfo.relativeVelocity);
+	}
+
+	//Application.LoadLevel ("GameOver");
 
 }

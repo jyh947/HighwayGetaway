@@ -434,6 +434,10 @@ Prefab:
       propertyPath: m_Name
       value: PlayerCar
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 461bac3201d8b43b49e9c6764a20682f, type: 3}
@@ -774,8 +778,8 @@ Transform:
   m_PrefabInternal: {fileID: 785030922}
   m_GameObject: {fileID: 625297316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: .5, z: 0}
-  m_LocalScale: {x: 1.45000005, y: 1, z: 2.70000005}
+  m_LocalPosition: {x: 6, y: 1, z: 0}
+  m_LocalScale: {x: 1.79999995, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 1874098114}
   m_RootOrder: 2
@@ -787,12 +791,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 625297316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca64555e034a804c91e824574ebdb76, type: 3}
+  m_Script: {fileID: 11500000, guid: 6525c5b8201803640b276eed5a9aa758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
+<<<<<<< HEAD
   laneSwitchOffset: 3.375
+=======
+  startZ: 0
+  laneSwitchOffset: 3.375
+  fract: 0
+  speed: 0
+>>>>>>> origin/master
 --- !u!23 &625297319
 Renderer:
   m_ObjectHideFlags: 0
@@ -918,9 +929,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a907922e40bfdd14e9bf68e772b18e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   carType1: {fileID: 0}
   carType2: {fileID: 0}
   carType3: {fileID: 0}
+=======
+  carType1: {fileID: 1451906132}
+  carType2: {fileID: 1696304987}
+  carType3: {fileID: 625297318}
+>>>>>>> origin/master
   numCars: 0
 --- !u!1001 &785030922
 Prefab:
@@ -1292,11 +1309,13 @@ MonoBehaviour:
   startX: 2
   startY: .5
   startZ: 0
+  laneSwitchOffset: 3.375
   fract: .0500000007
   speed: 5
   minSwipeDistX: 50
   minSwipeDistY: 50
   lowSpeedCounter: 500
+  startPos: {x: 0, y: 0}
 --- !u!23 &1076916459
 Renderer:
   m_ObjectHideFlags: 0
@@ -1536,7 +1555,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
+<<<<<<< HEAD
   laneSwitchOffset: 3.375
+=======
+  startZ: 0
+  laneSwitchOffset: 3.375
+  fract: 0
+  speed: 0
+>>>>>>> origin/master
 --- !u!23 &1451906133
 Renderer:
   m_ObjectHideFlags: 0
@@ -1635,7 +1661,7 @@ GameObject:
   - 114: {fileID: 1551553608}
   m_Layer: 0
   m_Name: PlayerCar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,11 +1692,13 @@ MonoBehaviour:
   startX: 2
   startY: .5
   startZ: 0
+  laneSwitchOffset: 3.375
   fract: .0500000007
   speed: 5
   minSwipeDistX: 50
   minSwipeDistY: 50
   lowSpeedCounter: 500
+  startPos: {x: 0, y: 0}
 --- !u!65 &1551553609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2007,8 +2035,8 @@ Transform:
   m_PrefabInternal: {fileID: 844566678}
   m_GameObject: {fileID: 1696304985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: .5, z: 0}
-  m_LocalScale: {x: 1.45000005, y: 1, z: 2.70000005}
+  m_LocalPosition: {x: 4, y: .75, z: 0}
+  m_LocalScale: {x: 1.60000002, y: 1.5, z: 3.11999989}
   m_Children: []
   m_Father: {fileID: 1874098114}
   m_RootOrder: 1
@@ -2020,12 +2048,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1696304985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca64555e034a804c91e824574ebdb76, type: 3}
+  m_Script: {fileID: 11500000, guid: d53c567bed7a2dc4a96102c79958f94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startX: 5.75
   startY: .5
+<<<<<<< HEAD
   laneSwitchOffset: 3.375
+=======
+  startZ: 0
+  laneSwitchOffset: 3.375
+  fract: 0
+  speed: 0
+>>>>>>> origin/master
 --- !u!23 &1696304988
 Renderer:
   m_ObjectHideFlags: 0

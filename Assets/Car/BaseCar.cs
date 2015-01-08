@@ -7,6 +7,7 @@ public class BaseCar : MonoBehaviour {
 	public float startX = 0f;
 	public float startY = 0.5f;
 	public float startZ = 0f;
+	public float laneSwitchOffset = 3.375f;
 
 	// CopyCat target
 	protected Vector3 target;

@@ -37,7 +37,7 @@ public class RoadManager : MonoBehaviour {
 	private static float roadTileWidth;
 	private static float tileOffset; // horizontal distance between two road/divider tiles
 
-	private float timeUntilRoadChange = 3f;
+	//private float timeUntilRoadChange = 3f;
 
 	// Use this for initialization
 	void Start () {

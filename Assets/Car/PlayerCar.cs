@@ -8,6 +8,7 @@ public class PlayerCar : BaseCar {
 	public float minSwipeDistY = 50f;
 
 	public int lowSpeedCounter = 0;
+	public float timeOfSlow = 0f;
 
 	public static float distanceTraveled = 0f;
 	public static float playerSpeed = 0f;
@@ -37,14 +38,12 @@ public class PlayerCar : BaseCar {
 			
 			// Check GameOver state
 			if (speed < Globals.LosingVelocity) {
-				lowSpeedCounter++;
+				if ((Time.time - timeOfSlow) > Globals.LosingSeconds) { // i think something else should be responsible for this but this is fine for now
+					GUIManager.GameOver();
+					Globals.GameOver = true;
+				}
 			} else {
-				lowSpeedCounter = 0;
-			}
-			
-			if (lowSpeedCounter > Globals.LosingFrames) { // i think something else should be responsible for this but this is fine for now
-				GUIManager.GameOver();
-				Globals.GameOver = true;
+				timeOfSlow = Time.time;
 			}
 		}
 	}

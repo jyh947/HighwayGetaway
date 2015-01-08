@@ -4,6 +4,7 @@ public class GUIManager : MonoBehaviour {
 
 	private static GUIManager instance;
 	public GUIText velocityText, distanceText, directionText, gameOverText;
+	public GUITexture tryAgainButton;
 	public int counter = 0;
 	public static bool left = false, right = false, up = false, down = false;
 
@@ -13,6 +14,7 @@ public class GUIManager : MonoBehaviour {
 		distanceText.enabled = true;
 		directionText.enabled = true;
 		gameOverText.enabled = false;
+		tryAgainButton.enabled = false;
 	}
 	
 	public static void GameOver(){
@@ -20,8 +22,7 @@ public class GUIManager : MonoBehaviour {
 		instance.distanceText.enabled = false;
 		instance.directionText.enabled = false;
 		instance.gameOverText.enabled = true;
-		if (GUI.Button(new Rect(10, 70, 50, 30), "Click"))
-			Debug.Log("Clicked the button with text");
+		instance.tryAgainButton.enabled = true;
 	}
 
 	public static void SetVelocity(){

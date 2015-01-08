@@ -15,6 +15,7 @@ public class PlayerCar : BaseCar {
 	public Vector2 startPos;
 
 	override protected void Start() {
+		startPos = new Vector2 ();
 		Globals.GameOver = false;
 		base.Start ();
 		speed = Globals.StartingVelocity;
@@ -118,6 +119,7 @@ public class PlayerCar : BaseCar {
 			print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
 			print("Their relative velocity is " + collisionInfo.relativeVelocity);
 			speed = 0;
+			moveUp ();
 			//Application.LoadLevel("GameOver");
 			GUIManager.GameOver();
 		}

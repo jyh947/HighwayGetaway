@@ -68,10 +68,6 @@ public class PlayerCar : BaseCar {
 				startPos = touch.position;
 				break;
 			case TouchPhase.Ended:
-				if(startPos.x == 0 &&  startPos.y == 0){
-					startPos.x = touch.position.x;
-					startPos.y = touch.position.y;
-				}
 				float swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
 				if (swipeDistVertical > minSwipeDistY)
 				{
@@ -91,11 +87,6 @@ public class PlayerCar : BaseCar {
 						moveLeft();
 					}
 					else if (swipeValue > 0){
-						print ("touch.position.x = " + touch.position.x);
-						print ("startPos.x = " + startPos.x);
-						print ("swipeDistHorizontal = " + swipeDistHorizontal);
-						print ("swipeValue = " + swipeValue);
-						print ("WHY IS THIS HAPPENING");
 						moveRight();
 					}
 				}

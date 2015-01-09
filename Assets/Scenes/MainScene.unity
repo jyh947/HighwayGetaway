@@ -2145,6 +2145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13adf73fc0f2c4d9fa68d807b12139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1731757277}
+  onClickButton: {fileID: 2800000, guid: 8aa39568c2432454f936f9d4df934f17, type: 3}
+  offClickButton: {fileID: 2800000, guid: a4835b56a02b1e3459a74786742fef27, type: 3}
 --- !u!1 &1774157375
 GameObject:
   m_ObjectHideFlags: 0

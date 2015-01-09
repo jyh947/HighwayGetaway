@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: carCenter
-  m_Shader: {fileID: 4800000, guid: 9ce107479d11178d11005b9844295342, type: 3}
+  m_Name: playerCarCenter
+  m_Shader: {fileID: 4800000, guid: d84268709d11078d11005b9844295342, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -79,7 +79,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .162197247, g: .735294104, b: .213578343, a: 1}
+        second: {r: .0875865072, g: .280232131, b: .441176474, a: 1}
       data:
         first:
           name: _SpecColor

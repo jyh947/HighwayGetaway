@@ -3,17 +3,18 @@ using System.Collections;
 
 public class PlayAgain : MonoBehaviour {
 	public GUITexture button;
-	public Texture2D onClickButton;
-	public Texture2D offClickButton;
+	public string toChangeTo;
+	public Texture2D originalTexture;
+	public Texture2D whenPressedTexture;
 
 	void OnMouseDown() {
-		button.GetComponent<GUITexture>().texture = onClickButton;
+		button.GetComponent<GUITexture>().texture = whenPressedTexture;
 	}
 
 	void OnMouseUp() {
 		if (button.HitTest (Input.mousePosition) != null) {
-			button.GetComponent<GUITexture> ().texture = offClickButton;
-			Application.LoadLevel (Application.loadedLevel);
+			button.GetComponent<GUITexture> ().texture = whenPressedTexture;
+			Application.LoadLevel (toChangeTo);
 		}
 	}
 }

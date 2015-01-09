@@ -565,7 +565,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1551553607}
-  - {fileID: 1076916457}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &511359595
@@ -936,74 +935,6 @@ MonoBehaviour:
   carType2: {fileID: 11499452, guid: 51485d98f803bea419c72d33a2e7a749, type: 2}
   carType3: {fileID: 11428960, guid: e86723d71def06e498d061f798a8abbd, type: 2}
   numCars: 5
---- !u!1001 &799507993
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 477912352}
-    m_Modifications:
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 155192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_Name
-      value: PlayerCar-OLD
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_UseLightProbes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LightProbeAnchor
-      value: 
-      objectReference: {fileID: 2075242479}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 155192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-  m_RootGameObject: {fileID: 1076916456}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &883061036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,103 +1066,6 @@ Prefab:
   m_RootGameObject: {fileID: 272988851}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1076916456
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 155192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-  m_PrefabInternal: {fileID: 799507993}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1076916457}
-  - 33: {fileID: 1076916461}
-  - 65: {fileID: 1076916460}
-  - 23: {fileID: 1076916459}
-  - 114: {fileID: 1076916458}
-  m_Layer: 0
-  m_Name: PlayerCar-OLD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1076916457
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 455192, guid: 34974905c0bcc2b45b8c47f3204a70a1, type: 2}
-  m_PrefabInternal: {fileID: 799507993}
-  m_GameObject: {fileID: 1076916456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 477912352}
-  m_RootOrder: 1
---- !u!114 &1076916458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1076916456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c8ccf79230020c4cb15b715af69bb69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startX: 2
-  startY: .5
-  startZ: 0
-  laneSwitchOffset: 3.375
-  fract: .0500000007
-  minSpeed: 0
-  maxSpeed: 0
-  speed: 5
-  minSwipeDistX: 50
-  minSwipeDistY: 50
-  lowSpeedCounter: 500
-  timeOfSlow: 0
-  startPos: {x: 0, y: 0}
---- !u!23 &1076916459
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2355192, guid: 34974905c0bcc2b45b8c47f3204a70a1,
-    type: 2}
-  m_PrefabInternal: {fileID: 799507993}
-  m_GameObject: {fileID: 1076916456}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 2075242479}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &1076916460
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6555192, guid: 34974905c0bcc2b45b8c47f3204a70a1,
-    type: 2}
-  m_PrefabInternal: {fileID: 799507993}
-  m_GameObject: {fileID: 1076916456}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1076916461
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3355192, guid: 34974905c0bcc2b45b8c47f3204a70a1,
-    type: 2}
-  m_PrefabInternal: {fileID: 799507993}
-  m_GameObject: {fileID: 1076916456}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1096580254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,8 +1980,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1731757277}
-  onClickButton: {fileID: 2800000, guid: 8aa39568c2432454f936f9d4df934f17, type: 3}
-  offClickButton: {fileID: 2800000, guid: a4835b56a02b1e3459a74786742fef27, type: 3}
+  toChangeTo: MainScene
+  originalTexture: {fileID: 2800000, guid: a4835b56a02b1e3459a74786742fef27, type: 3}
+  whenPressedTexture: {fileID: 2800000, guid: 8aa39568c2432454f936f9d4df934f17, type: 3}
 --- !u!1 &1774157375
 GameObject:
   m_ObjectHideFlags: 0

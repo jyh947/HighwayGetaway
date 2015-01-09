@@ -12,8 +12,8 @@ public class PlayAgain : MonoBehaviour {
 	}
 
 	void OnMouseUp() {
-		if (button.HitTest (Input.mousePosition) != null) {
-			button.GetComponent<GUITexture> ().texture = whenPressedTexture;
+		button.GetComponent<GUITexture> ().texture = whenPressedTexture;
+		if (button.HitTest (Input.mousePosition)) {
 			Application.LoadLevel (toChangeTo);
 		}
 	}

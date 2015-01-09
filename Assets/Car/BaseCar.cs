@@ -21,9 +21,8 @@ public class BaseCar : MonoBehaviour {
 
 	virtual protected void Start () {
 		// Generate random car properties
-		speed = Random.Range (minSpeed, maxSpeed);
-		//int startingLane = (int)Random.Range (0, RoadManager.numLanes);
-		int startingLane = 2;
+		int startingLane = (int)Random.Range (0, RoadManager.numLanes);
+		//int startingLane = 2;
 		transform.position = new Vector3 (startX + startingLane * RoadManager.laneSwitchOffset, startY, startZ);
 
 		// Instantiate CopyCat object from your position and rotation

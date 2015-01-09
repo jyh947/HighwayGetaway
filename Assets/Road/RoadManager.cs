@@ -8,7 +8,7 @@ public class RoadManager : MonoBehaviour {
 	public Transform dividerPrefab;
 	public Transform roadTilePrefab;
 	
-	public static int numLanes = 10;
+	public static int numLanes = 5;
 
 	public int maxRoadLength = 10;
 	public int recycleOffset = 5;
